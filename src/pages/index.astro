@@ -244,8 +244,13 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
         </div>
 
         <div class="bd-quote-box">
-          <!-- TODO before launch: set `action` to the client's form endpoint (Formspree, CRM webhook, etc.). -->
-          <form class="bd-quote-form" data-quote novalidate>
+          <!-- Submissions go to Web3Forms, which emails them to the inbox tied to this access key.
+               The key is public by design (it can only send to that inbox), so it is safe in page source. -->
+          <form class="bd-quote-form" data-quote novalidate action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="03903b14-a962-43ca-a35e-c3a5511651a0" />
+            <input type="hidden" name="subject" value="New quote request from the BLANK Digital website" />
+            <input type="hidden" name="from_name" value="BLANK Digital website" />
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div class="bd-quote-dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
             <p class="bd-sr" aria-live="polite" data-quote-status>Step 1 of 3</p>
 
@@ -299,6 +304,8 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
               <label><span class="bd-sr">Project details</span><textarea name="details" rows="3" placeholder="Website, goals, competitors you want to beat"></textarea></label>
             </fieldset>
 
+            <p class="bd-quote-error" data-quote-error role="alert" hidden></p>
+
             <div class="bd-quote-nav">
               <button type="button" class="bd-quote-back" data-quote-back hidden>← Back</button>
               <button type="submit" class="bd-btn" data-quote-next>Get my quote →</button>
@@ -331,6 +338,7 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
   .bd-shimmer{background:linear-gradient(90deg,var(--ink) 0%,var(--accent) 50%,var(--ink) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bd-shimmer 8s linear infinite}
   .bd-hero-lede{margin-top:32px;font-size:clamp(17px,1.4vw,20px);line-height:1.55;max-width:560px;text-wrap:balance}
   .bd-hero-ctas{justify-content:center;margin-top:40px}
+  .bd-quote-error{margin:16px 0 0;font-size:14px;line-height:1.5;color:#ff8a8a}
   .bd-ticks{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px clamp(16px,3vw,36px);font-size:13px;color:var(--dim)}
 
   /* Dashboard */

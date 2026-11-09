@@ -417,8 +417,7 @@ $$('[data-faq]').forEach((faq) => {
 });
 
 // ---------- Quote form (home): three steps, then a confirmation ----------
-// TODO before launch: set the form's `action` to the client's endpoint (Formspree, CRM webhook, etc.).
-// Until then, submitting only shows the confirmation.
+// Sends to the form's `action` (Web3Forms). The confirmation only shows once the endpoint says it worked.
 const form = $<HTMLFormElement>('[data-quote]');
 if (form) {
   const stepsEls = $$<HTMLFieldSetElement>('.bd-step', form);
@@ -472,10 +471,33 @@ if (form) {
     }
     const action = form.getAttribute('action');
     if (action) {
+      const error = $('[data-quote-error]', form);
+      const label = next.textContent;
+      const data = new FormData(form);
+      // Several services can be ticked: send them as one readable line, not repeated fields.
+      const services = data.getAll('services').join(', ');
+      data.delete('services');
+      data.set('services', services);
+      next.disabled = true;
+      next.textContent = 'Sending…';
+      if (error) error.hidden = true;
+      let ok = false;
       try {
-        await fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const res = await fetch(action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        const json = await res.json().catch(() => ({}));
+        ok = res.ok && json.success !== false;
       } catch {
-        /* network error: still confirm on screen; a real project should surface this */
+        ok = false;
+      }
+      next.disabled = false;
+      next.textContent = label;
+      if (!ok) {
+        if (error) {
+          error.textContent = 'Sorry, that did not send. Please check your connection and try again.';
+          error.hidden = false;
+        }
+        if (status) status.textContent = 'Your request did not send. Please try again.';
+        return;
       }
     }
     const first = val('name').split(' ')[0] || 'there';

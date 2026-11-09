@@ -19,6 +19,7 @@ npm run build    # static site in dist/
 | Services, process, FAQs, team, insights, legal copy | `src/blank/data.ts` |
 | Page layout, header, footer, styles | `src/blank/Layout.astro` |
 | Animations, quote form, dashboard | `src/scripts/blank.ts` |
+| Quote form endpoint (Web3Forms access key) | `src/pages/index.astro` |
 | Pages | `src/pages/` |
 | Fonts (Michroma, Varela Round) | `public/fonts/` |
 | Article photos (optional) | `src/assets/images/blank-digital/post-<slug>.jpg` |
@@ -32,5 +33,4 @@ npm run build    # static site in dist/
 ## Before launch
 
 - Replace the placeholder phone and email in `src/blank/config.ts`.
-- Point the quote form at a real endpoint (see the TODO in `src/pages/index.astro`).
 - Confirm the claims on the page: "over 30 years of experience", "calls answered 24/7", the announcement pill.
