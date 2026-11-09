@@ -5,7 +5,8 @@ import { config, routes, serviceHref, faqSchema } from '../blank/config';
 import { services, steps, industries, statement, dashboard, lead, agents, touch, why, faqs, quote, pad2 } from '../blank/data';
 
 const b = config.business;
-const L1 = 'Marketing at the';
+// Non-breaking space keeps "at the" together, so small screens never strand "the" on its own line.
+const L1 = 'Marketing at\u00a0the';
 const L2 = 'speed of now';
 // Example growth plan: 12 weeks of enquiries with a rising shape (same formula the script animates).
 const bars = Array.from({ length: 12 }, (_, i) => Math.round(Math.max(0.08, Math.min(1, 0.14 + 0.8 * Math.pow(i / 11, 1.15) + 0.05 * Math.sin(i * 1.3))) * 100));
@@ -25,11 +26,11 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
       config.announcement.on && (
         <a href={routes.quote} class="bd-announce">
           <span class="bd-announce-tag"><span class="bd-announce-dot" />{config.announcement.label}</span>
-          {config.announcement.text} →
+          <span>{config.announcement.text}&nbsp;→</span>
         </a>
       )
     }
-    <h1 class="bd-hero-h1" aria-label={`${L1} ${L2}`}>
+    <h1 class="bd-hero-h1" aria-label={`${L1.replace('\u00a0', ' ')} ${L2}`}>
       <span class="bd-hero-ghost" aria-hidden="true">{L1}<br /><span class="bd-hero-pad">{L2}</span><span class="bd-type-cur is-space"></span></span>
       <span class="bd-hero-typed" aria-hidden="true" data-type>
         <span data-type-1>{L1}</span><span class="bd-type-cur" data-cur1 hidden></span><br /><span class="bd-shimmer bd-hero-pad" data-type-2>{L2}</span><span class="bd-type-cur" data-cur2></span>
@@ -44,14 +45,14 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
       <li>✓ Fixed quote in 1 hour</li><li>✓ No lock-in contracts</li><li>✓ Answered 24/7</li>
     </ul>
 
-    <!-- Example of a client's first weeks with BLANK: milestones, an illustrative growth curve and the agent team at work. Not live data. -->
+    <!-- Example of a client's first weeks with BLANK_: milestones, an illustrative growth curve and the agent team at work. Not live data. -->
     <figure class="bd-dash-stage" aria-labelledby="bd-dash-cap">
       <p id="bd-dash-cap" class="bd-mono-label bd-dash-cap">What your first weeks could look like</p>
       <div class="bd-dash" data-tilt>
         <div class="bd-dash-inner">
           <div class="bd-dash-bar">
             <div class="bd-dash-lights" aria-hidden="true"><span></span><span></span><span></span></div>
-            <span class="bd-dash-path">blank / {dashboard.path}</span>
+            <span class="bd-dash-path">BLANK_ / {dashboard.path}</span>
             <span class="bd-dash-live"><span></span>PREVIEW</span>
           </div>
           <div class="bd-dash-kpis">
@@ -209,7 +210,7 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
         <h2 class="bd-h2" data-reveal>We rebuilt the agency <span class="bd-grey">from zero.</span></h2>
       </div>
       <div class="bd-about-copy">
-        <p class="bd-about-lede" data-reveal>Local businesses had two options: slow, expensive agencies or doing it all themselves. BLANK is the third. We combine years of marketing experience with the speed and accuracy of AI agents, so you get quick, cost-effective solutions at lightning speed, at a price that makes sense for a real business.</p>
+        <p class="bd-about-lede" data-reveal>Local businesses had two options: slow, expensive agencies or doing it all themselves. BLANK_ is the third. We combine years of marketing experience with the speed and accuracy of AI agents, so you get quick, cost-effective solutions at lightning speed, at a price that makes sense for a real business.</p>
         <dl class="bd-why">
           {
             why.map((y) => (
@@ -248,8 +249,8 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
                The key is public by design (it can only send to that inbox), so it is safe in page source. -->
           <form class="bd-quote-form" data-quote novalidate action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="03903b14-a962-43ca-a35e-c3a5511651a0" />
-            <input type="hidden" name="subject" value="New quote request from the BLANK Digital website" />
-            <input type="hidden" name="from_name" value="BLANK Digital website" />
+            <input type="hidden" name="subject" value="New quote request from the BLANK_digital website" />
+            <input type="hidden" name="from_name" value="BLANK_digital website" />
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div class="bd-quote-dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
             <p class="bd-sr" aria-live="polite" data-quote-status>Step 1 of 3</p>
@@ -451,7 +452,7 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
   .bd-opt-mark::before{content:'+';opacity:.7}
   .bd-opt input:checked + span .bd-opt-mark::before{content:'✓'}
   .bd-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px}
-  .bd-quote-form input:not([type=checkbox]):not([type=radio]),.bd-quote-form textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:var(--ink);font-size:15px;outline:none;transition:border-color .2s}
+  .bd-quote-form input:not([type=checkbox]):not([type=radio]),.bd-quote-form textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:var(--ink);font-size:16px;outline:none;transition:border-color .2s}
   .bd-quote-form textarea{resize:vertical;display:block}
   .bd-quote-form input::placeholder,.bd-quote-form textarea::placeholder{color:var(--dim)}
   .bd-quote-form input:focus,.bd-quote-form textarea:focus{border-color:var(--accent-text)}
@@ -465,4 +466,14 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
   .bd-quote-done{display:flex;flex-direction:column;gap:20px;flex:1;justify-content:center;align-items:flex-start;outline:none}
   .bd-tick{width:52px;height:52px;border-radius:999px;background:rgba(126,226,168,0.12);border:1px solid rgba(126,226,168,0.4);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:20px}
   @media (max-width: 420px){ .bd-opts{grid-template-columns:1fr} }
+  /* Phones: cards size to their content, small dashboard labels stay readable */
+  @media (max-width: 700px){
+    .bd-svc-card{min-height:0}
+    .bd-svc-card .bd-h3{margin-top:12px !important}
+    .bd-announce{font-size:12px;min-height:44px;box-sizing:border-box}
+    .bd-announce-tag{font-size:12px}
+    .bd-dash-path,.bd-dash-live,.bd-dash-delta,.bd-dash-time,.bd-svc-speed,.bd-team-tag,.bd-team-status{font-size:12px}
+    .bd-dash-axis{font-size:12px}
+    .bd-quote-nav .bd-btn,.bd-quote-back{min-height:48px}
+  }
 </style>

@@ -91,7 +91,7 @@ const serviceSchema = {
     <div class="bd-deliv-grid">
       {
         s.deliverables.map(([t, d], k) => (
-          <div class="bd-card" data-reveal data-spot style="min-height:220px">
+          <div class="bd-card bd-deliv-card" data-reveal data-spot>
             <span class="bd-num-box" style="margin-bottom:auto">{pad2(k + 1)}</span>
             <h3 class="bd-h3" style="margin-top:20px">{t}</h3>
             <p style="font-size:15px;line-height:1.55;color:var(--text)">{d}</p>
@@ -138,6 +138,8 @@ const serviceSchema = {
 </Layout>
 
 <style is:global>
+  .bd-deliv-card{min-height:220px}
+  @media (max-width: 700px){ .bd-deliv-card{min-height:0} .bd-deliv-card .bd-h3{margin-top:8px !important} }
   .bd-ghost-num{position:absolute;right:clamp(0px,3vw,40px);top:110px;font-family:var(--display);font-size:clamp(140px,22vw,340px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(125,150,255,0.16);pointer-events:none;user-select:none}
   .bd-svc-timeline{border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);background:var(--band)}
   .bd-deliv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px}

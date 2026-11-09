@@ -1,4 +1,4 @@
-// Template 06 (BLANK Digital): motion and interactions.
+// Template 06 (BLANK_digital): motion and interactions.
 // Every page is readable without this script. It adds the boot screen, typed headline, particle field,
 // custom cursor, reveals, the live dashboard, the three-step quote form, FAQ, filters and the step tracker.
 
@@ -8,6 +8,32 @@ const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matc
 const $ = <T extends Element = HTMLElement>(s: string, el: ParentNode = document) => el.querySelector<T & Element>(s) as T | null;
 const $$ = <T extends Element = HTMLElement>(s: string, el: ParentNode = document) => Array.from(el.querySelectorAll(s)) as T[];
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+
+// ---------- Brand underscore ----------
+// The brand is always written BLANK_digital (or BLANK_ on its own). Wherever it appears in page copy,
+// the underscore is wrapped in .bd-us so it blinks like the logo's cursor. The text itself stays a real "_",
+// so it reads and copies correctly with or without this script.
+{
+  const skip = 'script,style,textarea,title,noscript,svg,option,[data-scramble],.bd-us';
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => (n.nodeValue?.includes('BLANK_') && !n.parentElement?.closest(skip) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT),
+  });
+  const hits: Text[] = [];
+  while (walker.nextNode()) hits.push(walker.currentNode as Text);
+  hits.forEach((node) => {
+    const frag = document.createDocumentFragment();
+    (node.nodeValue || '').split(/(?<=BLANK)_/).forEach((part, i) => {
+      if (i > 0) {
+        const us = document.createElement('span');
+        us.className = 'bd-us';
+        us.textContent = '_';
+        frag.append(us);
+      }
+      if (part) frag.append(part);
+    });
+    node.replaceWith(frag);
+  });
+}
 
 // ---------- Text scramble (eyebrow labels) ----------
 const scramble = (el: HTMLElement) => {

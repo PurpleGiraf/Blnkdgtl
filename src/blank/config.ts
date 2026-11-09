@@ -1,4 +1,4 @@
-// Client branding, business details and routes for Template 06 (Digital marketing agency / BLANK Digital).
+// Client branding, business details and routes for Template 06 (Digital marketing agency / BLANK_digital).
 // Change these values to re-brand the template. Services, posts, FAQs and legal copy live in data.ts.
 
 export const config = {
@@ -15,7 +15,9 @@ export const config = {
   announcement: { on: true, label: 'NOW BOOKING', text: '3 launch slots left for November' },
 
   business: {
-    name: 'BLANK Digital',
+    // Brand name. Always BLANK_digital (BLANK_ on its own). In page copy the underscore blinks (see blank.ts).
+    name: 'BLANK_digital',
+    // Registered company name: keep exactly as registered with ASIC (company names cannot contain underscores).
     legalName: 'BLANK Digital Pty Ltd',
     // Placeholder number and email from the design: replace with the client's details before launch.
     phone: '+1 (000) 000-0000',

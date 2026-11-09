@@ -62,7 +62,7 @@ const list = {
         {
           combos.map((c) => (
             <div class="bd-card bd-combo" data-reveal data-spot>
-              <span class="bd-eyebrow" style="font-size:11px">{c.tag}</span>
+              <span class="bd-eyebrow" style="font-size:12px">{c.tag}</span>
               <h3 class="bd-h3" style="font-size:22px;line-height:1.25">{c.title}</h3>
               <p style="font-size:15px;line-height:1.6;flex:1;color:var(--text)">{c.body}</p>
               <ul class="bd-tags">
@@ -97,6 +97,7 @@ const list = {
   }
   .bd-combo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
   .bd-combo{min-height:340px;padding:32px;border-radius:20px;gap:18px}
+  @media (max-width: 700px){ .bd-combo{min-height:0;padding:28px} .bd-svc-speed-l{font-size:12px} }
   .bd-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
   .bd-tags li{font-size:13px;color:var(--soft);padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.1)}
 </style>

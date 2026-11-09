@@ -1,6 +1,6 @@
-# BLANK Digital website
+# BLANK_digital website
 
-Astro static site for BLANK Digital. Moved out of the Purple Giraffe templates repository
+Astro static site for BLANK_digital. Moved out of the Purple Giraffe templates repository
 (`PurpleGiraf/Website-Developement`, where it lived at `/blank-digital/`) so it can run on its own domain.
 
 ## Run it locally

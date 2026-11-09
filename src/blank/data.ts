@@ -1,4 +1,4 @@
-// Page content for Template 06 (BLANK Digital). Branding and contact details live in config.ts.
+// Page content for Template 06 (BLANK_digital). Branding and contact details live in config.ts.
 
 export type Service = {
   slug: string;
@@ -237,7 +237,7 @@ export const faqs = [
   { q: 'Who will I be dealing with?', a: 'Our agent team handles the day-to-day work and stays in touch by email and phone, any time, day or night. Everything they do is overseen by our marketing leadership, with over 30 years of experience.' },
   { q: 'Is it all AI?', a: 'No. AI agents give us speed and accuracy. Experienced marketers set the strategy, review the plans and sign off the work. You get both.' },
   { q: 'Do I need to sign a long contract?', a: 'No. Plans roll month to month. We keep clients with results, not paperwork.' },
-  { q: 'We are a small local business. Is this for us?', a: 'That is exactly who BLANK is built for. Clinics, cafés, trades, gyms, salons and retailers.' },
+  { q: 'We are a small local business. Is this for us?', a: 'That is exactly who BLANK_ is built for. Clinics, cafés, trades, gyms, salons and retailers.' },
 ];
 
 export const quote = {
@@ -313,7 +313,7 @@ export const legal = {
   updated: '30 Oct 2026',
   privacy: {
     title: 'Privacy policy',
-    intro: 'This policy explains what personal information BLANK Digital collects, how we use it and the choices you have.',
+    intro: 'This policy explains what personal information BLANK_digital collects, how we use it and the choices you have.',
     sections: [
       ['Information we collect', 'Details you give us when you request a quote, call, email or subscribe, such as your name, business name, email, phone number and project details. We also collect basic usage data from our website through cookies and analytics tools.'],
       ['How we use it', 'To respond to enquiries, prepare quotes, deliver and improve our services, send updates you have asked for and meet our legal obligations.'],
@@ -325,7 +325,7 @@ export const legal = {
   },
   terms: {
     title: 'Terms of service',
-    intro: 'These terms govern your use of the BLANK Digital website and the services we provide. Project-specific terms in your quote or agreement take precedence.',
+    intro: 'These terms govern your use of the BLANK_digital website and the services we provide. Project-specific terms in your quote or agreement take precedence.',
     sections: [
       ['Services', 'We provide the marketing services described in your quote. Scope, deliverables and timelines are confirmed in writing before work begins.'],
       ['Quotes and payment', 'Quotes are fixed for the agreed scope and valid for 30 days. Monthly plans are billed in advance. Ad spend is billed separately or paid directly by you to the platform.'],

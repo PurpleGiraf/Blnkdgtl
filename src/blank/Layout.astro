@@ -311,6 +311,7 @@ const introOn = isHome && config.showIntro;
   .bd-logo{position:relative;display:inline-block;flex:none;width:calc(var(--s) * 5.7);line-height:0;color:var(--ink)}
   .bd-logo svg{display:block;width:100%;height:auto}
   .bd-logo .bd-logo-cursor{position:absolute;left:89.58%;width:10.42%;top:calc(36.1 / var(--logo-h) * 100%);height:calc(9 / var(--logo-h) * 100%);margin:0;box-shadow:0 0 8px var(--accent)}
+  .bd-us{color:var(--accent-text);animation:bd-blink 1.05s steps(1) infinite}
   .bd-cursor{display:inline-block;width:0.62em;height:0.16em;margin-bottom:0.06em;background:var(--accent);box-shadow:0 0 0.5em var(--accent);animation:bd-blink 1.05s steps(1) infinite}
 
   /* Buttons */
@@ -396,6 +397,28 @@ const introOn = isHome && config.showIntro;
     .bd-nav .bd-menu-btn{display:inline-block}
   }
   @media (max-width: 400px){ .bd-nav > .bd-btn{display:none} }
+  /* Phones and tablets: every tap target at least 44px, small labels no smaller than 12px, no iOS zoom on inputs */
+  @media (max-width: 879px){
+    .bd-menu-btn{min-height:44px;box-sizing:border-box;padding:0 18px;display:none;align-items:center}
+    .bd-nav .bd-menu-btn{display:inline-flex}
+    .bd-nav-logo{min-height:44px;align-items:center}
+    .bd-nav > .bd-btn-sm{min-height:44px;box-sizing:border-box}
+    .bd-menu{gap:4px;max-height:calc(100dvh - var(--bd-nav-top,16px) - 88px);overflow-y:auto;overscroll-behavior:contain}
+    .bd-menu a:not(.bd-btn){display:block;padding:10px 0}
+    .bd-menu .bd-btn{margin-top:16px;min-height:48px}
+    .bd-chip{min-height:44px;display:inline-flex;align-items:center}
+    .bd-text-link{min-height:44px;box-sizing:border-box;padding-top:10px}
+    .bd-crumbs a{display:inline-flex;align-items:center;min-height:44px}
+    .bd-footer-col{gap:0}
+    .bd-footer-col .bd-mono-label{margin-bottom:6px}
+    .bd-footer-col a{display:inline-flex;align-items:center;min-height:44px}
+    .bd-footer-legal a{display:inline-flex;align-items:center;min-height:44px}
+    .bd-footer-item{gap:0}
+    .bd-footer-item a,.bd-footer-inline a{display:inline-flex;align-items:center;min-height:44px}
+    .bd-footer-inline{gap:0 24px}
+    .bd-mono-label{font-size:12px}
+    input,textarea,select{font-size:16px !important}
+  }
 
   /* Cards and panels */
   .bd-card{position:relative;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;gap:14px;color:var(--ink);transition:border-color .4s}
@@ -492,6 +515,6 @@ const introOn = isHome && config.showIntro;
   .bd-js:not(.bd-still) [data-grow].is-in,.bd-still [data-grow],html:not(.bd-js) [data-grow]{transform:scaleX(1)}
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important}
-    .bd-cursor{animation:none}
+    .bd-cursor,.bd-us{animation:none}
   }
 </style>
