@@ -25,15 +25,9 @@ npm run build    # static site in dist/
 
 ## Deploy on Vercel
 
-1. In Vercel: **Add New → Project**, import `PurpleGiraf/blank-digital`. Framework preset: **Astro** (detected). Leave the build settings as they are.
+1. In Vercel: **Add New → Project**, import `PurpleGiraf/Blnkdgtl`. Framework preset: **Astro** (detected). Leave the build settings as they are.
 2. **Settings → Environment Variables**: add `SITE_URL` = the live domain, for example `https://blankdigital.com.au`. Used for canonical links and schema.
 3. **Settings → Domains**: add the domain (and the `www` version). Vercel shows the DNS records to add at the domain registrar, usually an `A` record for the root and a `CNAME` for `www`.
-
-## Password until launch
-
-`middleware.js` asks for a password on every page (only the browser icons and `robots.txt` are open).
-It stores a SHA-256 hash, not the password. To launch, set `GATE_ON` to `false` in `middleware.js`
-(or delete the file) and redeploy.
 
 ## Before launch
 
