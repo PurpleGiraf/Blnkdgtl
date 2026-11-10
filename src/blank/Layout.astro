@@ -169,7 +169,6 @@ const introOn = isHome && config.showIntro;
                   <a href={routes.quote} class="bd-btn bd-btn-lg bd-btn-glow" data-magnetic>
                     Get your free quote <span class="bd-arrow">→</span>
                   </a>
-                  <a href={b.phoneHref} class="bd-btn-ghost bd-btn-lg" data-magnetic>{b.phone}</a>
                 </div>
               </div>
             </div>
@@ -181,7 +180,6 @@ const introOn = isHome && config.showIntro;
       <footer class="bd-footer bd-footer-home">
         <div class="bd-footer-row">
           <div class="bd-footer-item"><span>Email</span><a href={`mailto:${b.email}`}>{b.email}</a></div>
-          <div class="bd-footer-item"><span>Phone · 24/7</span><a href={b.phoneHref}>{b.phone}</a></div>
           <nav class="bd-footer-inline" aria-label="Footer">
             <a href={b.social.instagram}>Instagram</a>
             <a href={b.social.linkedin}>LinkedIn</a>
@@ -220,8 +218,6 @@ const introOn = isHome && config.showIntro;
           <div class="bd-footer-col">
             <span class="bd-mono-label">Contact</span>
             <a href={`mailto:${b.email}`} class="bd-ink">{b.email}</a>
-            <a href={b.phoneHref} class="bd-ink">{b.phone}</a>
-            <span class="bd-footer-live"><span class="bd-live-dot"></span>Answered 24/7</span>
           </div>
           <nav class="bd-footer-col" aria-label="Follow">
             <span class="bd-mono-label">Follow</span>

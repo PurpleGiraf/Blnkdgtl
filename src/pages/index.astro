@@ -238,10 +238,6 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
           <span class="bd-eyebrow" data-reveal data-scramble>Get a quote</span>
           <h2 id="bd-quote-title" class="bd-h2" data-reveal style="font-size:clamp(31px,4.4vw,63px)">60 seconds.<br /><span class="bd-blue">Then we move.</span></h2>
           <p data-reveal style="font-size:18px;line-height:1.6;max-width:420px">Three quick questions. A tailored plan and fixed price in your inbox within the hour. No sales call required.</p>
-          <div class="bd-quote-call" data-reveal>
-            <span class="bd-quote-call-dot"></span>
-            <span>Prefer to talk? <a href={b.phoneHref}>{b.phone}</a>, answered 24/7.</span>
-          </div>
         </div>
 
         <div class="bd-quote-box">
@@ -428,9 +424,6 @@ const feed = [0, 1, 2, 3].map((k) => ({ text: dashboard.feed[(9 - k) % 9][0], co
   .bd-quote-sec .bd-panel{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(47,91,255,0.16),transparent 60%),var(--panel-2)}
   .bd-quote-grid{position:relative;padding:clamp(64px,9vw,120px) clamp(20px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:64px;align-items:start}
   .bd-quote-intro{display:flex;flex-direction:column;gap:28px}
-  .bd-quote-call{display:flex;align-items:center;gap:14px;margin-top:12px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,0.02);max-width:420px;font-size:14px;color:var(--soft)}
-  .bd-quote-call a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,0.25)}
-  .bd-quote-call-dot{width:8px;height:8px;border-radius:9px;background:var(--green);animation:bd-pulse 1.6s infinite;flex-shrink:0}
   .bd-quote-box{border-radius:20px;border:1px solid transparent;background:linear-gradient(rgba(10,10,11,0.94),rgba(10,10,11,0.94)) padding-box,conic-gradient(from var(--bd-a),rgba(255,255,255,0.08) 0deg,rgba(255,255,255,0.08) 250deg,var(--accent) 320deg,var(--ink) 345deg,rgba(255,255,255,0.08) 360deg) border-box;animation:bd-spin 5s linear infinite;padding:clamp(24px,3.4vw,40px);min-height:520px;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,0.4)}
   .bd-quote-form{display:flex;flex-direction:column;gap:32px;flex:1}
   .bd-quote-dots{display:flex;gap:6px}

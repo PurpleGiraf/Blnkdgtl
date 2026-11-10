@@ -19,9 +19,7 @@ export const config = {
     name: 'BLANK_digital',
     // Registered company name: keep exactly as registered with ASIC (company names cannot contain underscores).
     legalName: 'BLANK Digital Pty Ltd',
-    // Placeholder number and email from the design: replace with the client's details before launch.
-    phone: '+1 (000) 000-0000',
-    phoneHref: 'tel:+10000000000',
+    // No public phone number: the site offers email and the quote form only.
     email: 'hello@blank.digital',
     founded: '2026',
     social: { instagram: '#', linkedin: '#', tiktok: '#' },
@@ -58,7 +56,6 @@ export const orgSchema = (site?: URL) => {
     name: b.name,
     legalName: b.legalName,
     url: abs(routes.home, site),
-    telephone: b.phone,
     email: b.email,
     foundingDate: b.founded,
     slogan: config.tagline,
