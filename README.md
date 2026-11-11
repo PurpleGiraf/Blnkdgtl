@@ -32,5 +32,4 @@ npm run build    # static site in dist/
 
 ## Before launch
 
-- Replace the placeholder phone and email in `src/blank/config.ts`.
 - Confirm the claims on the page: "over 30 years of experience", "calls answered 24/7", the announcement pill.

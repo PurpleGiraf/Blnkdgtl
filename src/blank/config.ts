@@ -20,7 +20,7 @@ export const config = {
     // Registered company name: keep exactly as registered with ASIC (company names cannot contain underscores).
     legalName: 'BLANK Digital Pty Ltd',
     // No public phone number: the site offers email and the quote form only.
-    email: 'hello@blank.digital',
+    email: 'marketing@blankdigital.com.au',
     founded: '2026',
     social: { instagram: '#', linkedin: '#', tiktok: '#' },
   },
