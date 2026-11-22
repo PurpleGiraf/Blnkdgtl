@@ -6,4 +6,6 @@ export default defineConfig({
   // (e.g. https://blankdigital.com.au) or change the fallback once the domain is confirmed.
   site: process.env.SITE_URL || 'https://example.com',
   trailingSlash: 'always',
+  // Video was removed as a service: send old links to the services page.
+  redirects: { '/services/video': '/services/' },
 });

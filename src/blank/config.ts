@@ -59,7 +59,7 @@ export const orgSchema = (site?: URL) => {
     email: b.email,
     foundingDate: b.founded,
     slogan: config.tagline,
-    knowsAbout: ['Paid advertising', 'Social media marketing', 'Search engine optimisation', 'Web design', 'Branding', 'Email marketing', 'Video production', 'Marketing analytics'],
+    knowsAbout: ['Paid advertising', 'Social media marketing', 'Search engine optimisation', 'AI search visibility', 'Web design', 'Branding', 'Email marketing', 'Marketing analytics'],
   };
 };
 

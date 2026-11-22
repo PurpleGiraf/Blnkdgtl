@@ -10,17 +10,19 @@ const list = {
   name: `${b.name} services`,
   itemListElement: services.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: absUrl(serviceHref(s.slug), Astro.site) })),
 };
+// Headline number follows the service list, so it stays right when services are added or removed.
+const countWord = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'][services.length] ?? String(services.length);
 ---
 
 <Layout
   page="services"
   title={`Services | ${b.name}`}
-  description="Paid ads, social content, SEO, web design, branding, email and CRM, video and analytics for local businesses. One team running every channel, live in days, month to month."
+  description="Paid ads, social content, SEO and AI search, web design, branding, email and CRM, and analytics for local businesses. One team running every channel, live in days, month to month."
   jsonld={[list, breadcrumbSchema([{ name: 'Home', path: routes.home }, { name: 'Services', path: routes.services }], Astro.site)]}
 >
   <header class="bd-wrap bd-page-hero">
     <span class="bd-eyebrow" data-hero data-scramble style="margin-bottom:28px">Services · {pad2(services.length)}</span>
-    <h1 class="bd-h1" data-hero style="max-width:1080px">Eight ways to grow. <span class="bd-blue">One team running all of them.</span></h1>
+    <h1 class="bd-h1" data-hero style="max-width:1080px">{countWord} ways to grow. <span class="bd-blue">One team running all of them.</span></h1>
     <div data-hero class="bd-svc-hero-row">
       <p class="bd-lede">Pick a single service or let us run the lot. Everything plugs together, so your ads, site and content all pull in the same direction.</p>
       <ul class="bd-svc-ticks">

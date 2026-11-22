@@ -32,4 +32,4 @@ npm run build    # static site in dist/
 
 ## Before launch
 
-- Confirm the claims on the page: "over 30 years of experience", "calls answered 24/7", the announcement pill.
+- Confirm the claims on the page: "over 30 years of experience", the announcement pill.
