@@ -54,7 +54,7 @@ export const services: Service[] = [
     blurb: 'Found on Google and in AI answers, and kept there.',
     h1: 'Show up when they search, and when they ask.',
     intro: 'Local SEO, technical fixes and content built to rank on Google and to be quoted in AI answers from ChatGPT, Google AI Overviews and Copilot, for the searches and questions that matter.',
-    deliverables: [['SEO and AI visibility audit', 'A full review of your site, rankings, competitors and how AI tools describe you, with a keyword map.'], ['Google Business Profile', 'Categories, services, photos and posts optimised for the map pack.'], ['Technical and on-page fixes', 'Speed, indexing, schema, meta titles and headings fixed, so search engines and AI tools can read you.'], ['Monthly blog article', 'One keyword-informed article a month, linked to your key pages and published on your site.'], ['AI answer optimisation', 'Clear, summarised answers, FAQs and structured content for conversational and long-tail questions, so AI tools can quote you.'], ['Tracking and reporting', 'Rankings, traffic, AI visibility and enquiries from search, reported every month.']],
+    deliverables: [['SEO and AI visibility audit', 'A full review of your site, rankings, competitors and how AI tools describe you, with a keyword map.'], ['Google Business Profile', 'Categories, services, photos and posts optimised for the map pack.'], ['Technical and on-page fixes', 'Speed, indexing, schema, meta titles and headings fixed, so search engines and AI tools can read you.'], ['Monthly blog article', 'One keyword-informed article a month, 500 to 1,200 words, linked to your key pages and published on your site.'], ['AI answer optimisation', 'Clear, summarised answers, FAQs and structured content for conversational and long-tail questions, so AI tools can quote you.'], ['Tracking and reporting', 'Rankings, traffic, AI visibility and enquiries from search, reported every month.']],
     timeline: [['Day 0', 'Audit and access'], ['72 hours', 'Quick wins fixed'], ['30 days', 'First article and AI-ready content live'], ['Ongoing', 'Monthly reports']],
     metrics: ['Map pack rankings', 'Organic traffic', 'AI answer mentions', 'Calls from search'],
     faqs: [
@@ -74,9 +74,10 @@ export const services: Service[] = [
     timeline: [['Day 0', 'Brief and research'], ['3–5 days', 'Landing pages live'], ['1–2 weeks', 'Template websites live'], ['2–3 weeks', 'Custom websites live']],
     metrics: ['Conversion rate', 'Page speed score', 'Form submissions', 'Calls from site'],
     faqs: [
+      { q: 'Which website package do I need?', a: 'Focus is a single landing page, inside your current site or standalone, best for a campaign, event or single offer. Core is up to 5 pages, best for sole traders and small businesses. Scale is 6 to 10 pages on WordPress, best for service businesses ready to grow. Each comes as template or custom.' },
       { q: 'Template or custom: which do I need?', a: 'Template means we style our website framework to your brand, using your logo, colours, fonts and images. It is faster, more cost-effective and the right fit for most small and growing businesses. Custom means we design from scratch, starting with a moodboard and design concepts, with two design review rounds before we build. Choose custom if you want a distinctive look or your brand is a key point of difference.' },
       { q: 'Can I edit the site myself?', a: 'Yes. We build on platforms that are easy to update, and show you how.' },
-      { q: 'What about hosting?', a: 'We host in a Sydney data centre with SSL, backups, monitoring and security updates, on a simple monthly plan. Care plans add plugin and theme updates, a monthly report and time for small changes each month.' },
+      { q: 'What about hosting?', a: 'We host in a Sydney data centre with SSL, backups, monitoring and security updates, on a simple monthly plan. Our Care and Care Plus plans add plugin and theme updates, a monthly report and time for changes each month.' },
       { q: 'Do you look after Shopify stores?', a: 'Yes. Shopify Care covers theme and app updates, monitoring, a monthly report and time for small changes each month.' },
       { q: 'Do you redesign or take over existing sites?', a: 'Often. We keep what works, fix what does not and migrate content without losing your rankings. For sites we did not build, we start with a takeover audit before we host or make changes.' },
     ],
@@ -113,15 +114,16 @@ export const services: Service[] = [
   },
   {
     slug: 'analytics', name: 'Analytics', short: 'analytics', speed: 'Day one', speedLong: 'Live dashboard on day one',
-    card: 'Proper tracking, a live dashboard and plain-English weekly reports.',
-    blurb: 'Proper tracking, a live dashboard and weekly reports.',
+    card: 'Google Analytics, search and social engagement tracked properly, in one live dashboard.',
+    blurb: 'Google and social engagement analytics in one live dashboard.',
     h1: 'Know exactly what works.',
-    intro: 'Proper tracking, a live dashboard and plain-English weekly reports. Every dollar and every lead, accounted for.',
-    deliverables: [['Tracking audit', 'A full check of what is and is not being measured today.'], ['GA4 and tag setup', 'Analytics and tags configured correctly.'], ['Call and form tracking', 'Every phone call and enquiry attributed to its source.'], ['Live dashboard', 'Your key numbers, updated continuously, on any device.'], ['Weekly reports', 'What happened, why, and what we are doing next.'], ['Quarterly review', 'A strategy session to plan the next three months.']],
+    intro: 'Google Analytics, Search Console, Google Business Profile and social engagement data set up properly and brought together in one live dashboard, with plain-English reports. Every visit, enquiry and dollar, accounted for.',
+    deliverables: [['Tracking audit', 'A full check of what is and is not being measured today.'], ['Google Analytics 4 and Tag Manager', 'Analytics, tags and conversion events configured correctly.'], ['Search and Business Profile insights', 'Search Console and Google Business Profile connected, so you see how people find you.'], ['Social engagement analytics', 'Reach, engagement and follower growth from Facebook, Instagram, LinkedIn and TikTok in one place.'], ['Enquiry tracking', 'Every form, call and booking attributed to its source.'], ['Live dashboard and reports', 'Your key numbers updated continuously, with plain-English weekly reports.']],
     timeline: [['Day 0', 'Audit existing tracking'], ['48 hours', 'Tracking fixed and verified'], ['72 hours', 'Live dashboard'], ['Ongoing', 'Weekly reports']],
-    metrics: ['Cost per lead', 'Lead source', 'Customer lifetime value', 'Return on spend'],
+    metrics: ['Website traffic', 'Engagement rate', 'Lead source', 'Cost per lead'],
     faqs: [
       { q: 'I already have Google Analytics. Why change?', a: 'Most setups miss calls, forms or bookings. We audit, fix and connect everything so the numbers are real.' },
+      { q: 'Which platforms do you report on?', a: 'Google Analytics, Search Console, Google Business Profile and Google Ads, plus Facebook, Instagram, LinkedIn and TikTok.' },
       { q: 'Can I see results any time?', a: 'Yes. Your live dashboard updates continuously and works on any device.' },
       { q: 'Do you report on other agencies’ work?', a: 'Yes. We can track every channel you run, whoever manages it.' },
     ],
@@ -188,7 +190,7 @@ export const dashboard = {
   ],
   feed: [
     ['Strategy agent drafted your 90-day plan', '#7D96FF'], ['Marketing lead reviewed and approved the plan', '#7EE2A8'], ['Ads agent launched 4 headline tests', '#E8C77E'],
-    ['Website agent published landing page v2', '#7D96FF'], ['Reception agent answered a call · booking made', '#7EE2A8'], ['Budget moved to the best-performing ad set', '#E8C77E'],
+    ['Website agent published landing page v2', '#7D96FF'], ['Content agent answered 6 comments and messages', '#7EE2A8'], ['Budget moved to the best-performing ad set', '#E8C77E'],
     ['Content agent scheduled 3 reels for this week', '#7D96FF'], ['Reporting agent sent your weekly summary', '#7EE2A8'], ["Marketing lead set next week's priorities", '#E8C77E'],
   ] as [string, string][],
 };
@@ -204,7 +206,7 @@ export const agents = [
   { name: 'Ads agent', body: 'Builds, tests and optimises your campaigns, hour by hour.' },
   { name: 'Website agent', body: 'Builds and improves your landing pages and website.' },
   { name: 'Content agent', body: 'Writes and schedules posts, reels and emails in your voice.' },
-  { name: 'Reception agent', body: 'Answers calls and enquiries 24/7 and books them in.' },
+  { name: 'SEO agent', body: 'Keeps you visible on Google and in AI answers, with fresh content every month.' },
   { name: 'Reporting agent', body: 'Tracks every lead and sends your weekly report.' },
 ];
 export const touch = [
